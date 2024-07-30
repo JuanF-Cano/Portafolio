@@ -1,17 +1,75 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Presentation from '../components/Presentation.astro';
+import Card from '../components/Card.astro';
+
+const newsProject = [
+	"/react.png", 
+	"/redux.png",
+	"/tailwind-css.png",
+	"/vite.svg",
+];
+
+const tmdbProject = [
+	"/react.png",
+	"/express.png",
+	"/css-3.png",
+	"/vite.svg",
+];
+
+const memoramaProject = [
+	"/html-5.png",
+	"/css-3.png",
+];
+
+const socialMediaProject = [
+	"/nextjs.png", 
+	"/NestJS.svg",
+	"/tailwind-css.png",
+];
 ---
 
 <Layout title="Juan Fernando Cano FullStack Developer">
 	<main>
 		<Presentation body='I am a computer science student and FullStack developer passionate and always improving. I love learning new things every day and studying to expand my knowledge in development.'/>
+		<h1>Projects</h1>
+		<div class="projects-container">
+			<Card 
+				image="/newsProject.png"
+				title="Bootcamp News"
+				tecnologies={newsProject}
+				codeLink="https://github.com/Gurottesque/News-App"
+				deployLink="https://bootcamp-news.netlify.app/"
+			/>
+			<Card 
+				image="/memoramaProject.png"
+				title="Memorama Game"
+				tecnologies={memoramaProject}
+				codeLink="https://github.com/JuanF-Cano/memorama-game"
+				deployLink=""
+			/>
+				<Card 
+				image="/tmdbProject.png"
+				title="Cinema App"
+				tecnologies={tmdbProject}
+				codeLink="https://github.com/JuanF-Cano/cinema-app"
+				deployLink="https://frabjous-pastelito-9e6b9f.netlify.app/"
+			/>
+			<Card 
+				image=""
+				title="Nexo Social Media"
+				tecnologies={socialMediaProject}
+				codeLink="https://github.com/FullStack-Elite-Bootcamp-IV/social-media-API"
+				deployLink=""
+			/>
+		</div>
 	</main>
 </Layout>
 
 <style>
 	main {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		padding: 2rem 4rem;
@@ -19,5 +77,9 @@ import Presentation from '../components/Presentation.astro';
 		color: #fff;
 		font-size: 23px;
 		line-height: 1.7;
+	}
+	.projects-container {
+		display: flex;
+		width: 102%;
 	}
 </style>

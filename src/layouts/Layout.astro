@@ -1,4 +1,5 @@
 ---
+import Navbar from '../components/Navbar.astro';
 interface Props {
 	title: string;
 }
@@ -17,13 +18,23 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<Navbar />
 		<slot />
 	</body>
 </html>
 <style is:global>
+	body{
+		overflow: scroll;
+		scroll-behavior: smooth;
+		margin: 0;
+		padding: 0;
+		background: linear-gradient(-70deg, #6a8d92, #3c6e71);
+	}
+	body::-webkit-scrollbar {
+		display: none;
+	}
 	html {
-		font-family: system-ui, sans-serif;
-		background: #050017;
-		background-size: 224px;
+		font-family: 'Inter', sans-serif;
+		padding: 0;
 	}
 </style>

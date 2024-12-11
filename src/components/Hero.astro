@@ -1,0 +1,102 @@
+
+---
+
+---
+
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="photo-container">
+        <img src="/me.jpg" alt="Juan Fernando Cano" class="profile-photo" />
+    </div>
+    <h1>Hi, I'm Juan Fernando</h1>
+    <p>Full-Stack Developer | Passionate about technology and innovation.</p>
+    <div class="buttons">
+        <button onclick="window.open('/CV - Juan Fernando Cano Duque.pdf', '_blank')" class="cta-button">CV</button>
+        <button onclick="window.open('https://www.linkedin.com/in/juan-fernando-cano-duque-35142531a/', '_blank')" class="cta-button">linkedIn</button>
+        <button onclick="window.open('https://github.com/JuanF-Cano')" class="cta-button">Github</button>
+    </div>
+  </div>
+</section>
+
+
+
+<style>
+    .hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        widht: 100vw;
+        color: white;
+        text-align: center;
+        position: relative;
+        margin-bottom: 4rem;
+    }
+    .hero h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        transition: transform 0.3s ease-in-out;
+    }
+    .hero p {
+        font-size: 1.5rem;
+        transition: opacity 0.3s ease-in-out;
+    }
+    .hero:hover h1 {
+        transform: scale(1.1);
+    }
+    .hero:hover p {
+        opacity: 0.8;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 500px;
+    }
+    .cta-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70px;
+        padding: 10px 26px;
+        font-size: 1.2rem;
+        background-color: #2d3748;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+        background-color: #4a5568;
+    }
+    .icon {
+        margin-right: 10px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 1.4rem 0rem;
+        border-radius: 10px;
+    }
+    .photo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .profile-photo {
+        margin: 3rem 0;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+  </style>

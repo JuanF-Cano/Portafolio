@@ -2,12 +2,12 @@
 interface Props {
     image: string;
     title: string;
-    tecnologies: string[];
+    technologies: string[];
     codeLink: string;
     deployLink: string;
 }
 
-const { image, title, tecnologies, codeLink, deployLink } = Astro.props;
+const { image, title, technologies, codeLink, deployLink } = Astro.props;
 ---
 
 <div class="card">
@@ -16,97 +16,105 @@ const { image, title, tecnologies, codeLink, deployLink } = Astro.props;
     </div>
     <h2>{title}</h2>
     <div class="tecnology-container">
-        {tecnologies.map((tec) => (
-            <img src={tec} alt="tecnology-image"/>
+        {technologies.map((tec) => (
+        <img src={tec} alt="tech-image" class="tech-icon" />
         ))}
     </div>
     <div class="links">
-        <span class="link-container">
-            Code 
-            <a href={codeLink} target="_blank">
-                <img src="/github.png" alt="GitHub" />
-            </a>
-        </span>
-        <span class="link-container">
-            Deploy 
-            <a href={deployLink} target="_blank">
-                <img src="/favicon.svg" alt="Deploy" />
-            </a>
-        </span>
+        <a href={codeLink} target="_blank" class="link">
+        <img src="/github.png" alt="GitHub" class="link-icon" />
+        Code
+        </a>
+        <a href={deployLink} target="_blank" class="link">
+        <img src="/favicon.svg" alt="Deploy" class="link-icon" />
+        Deploy
+        </a>
     </div>
 </div>
 
 <style>
     .card {
-        background-color: rgb(92, 92, 92);
         display: flex;
         flex-direction: column;
-        align-items: center;
-        width: 300px;
-        height: 430px;
-        margin: 10px;
-        padding: 0 20px 20px 20px;
-        border-radius: 10px;
+        justify-content: space-between;
+        background-color: #2d575e;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 330px;
+        height: 400px;
+        margin-right: 20px;
+        margin-left: 20px;
+        padding: 20px;
         color: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .card:hover {
-        background-color: rgb(100, 100, 100);
         transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
+
     h2 {
         font-weight: 500;
-        margin-bottom: 20px;
+        margin: 10px 0;
         text-align: center;
+        font-size: 2
+        rem;
     }
+
     .preview {
         width: 100%;
         height: 180px;
-        border-radius: 12px;
-        text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 25px;
-        margin-bottom: -15px;
         overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 20px;
     }
-    .preview > img {
+
+    .preview img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 12px;
+        border-radius: 10px;
     }
+
     .tecnology-container {
         display: flex;
-        gap: 10px;
+        gap: 12px;
         justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
-    .tecnology-container > img {
-        width: auto;
+
+    .tech-icon {
+        width: 40px;
         height: 40px;
-        object-fit: cover;
+        object-fit: contain;
     }
+
     .links {
         display: flex;
-        gap: 20px;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: auto;
-        text-align: center;
-        color: black;
-        font-weight: bold;
-        line-height: 12px;
+        justify-content: space-around;
+        gap: 10px;
     }
-    .link-container {
+
+    .link {
         display: flex;
-        justify-content: center;
         align-items: center;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        gap: 10px;
+        transition: color 0.3s ease;
     }
-    .link-container img {
-        width: 35px;
-        height: 35px;
-        margin-left: 10px;
+
+    .link:hover {
+        color: #122326;
+    }
+
+    .link-icon {
+        width: 30px;
+        height: 30px;
     }
 </style>

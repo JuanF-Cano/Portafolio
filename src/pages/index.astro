@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Presentation from '../components/Presentation.astro';
 import Card from '../components/Card.astro';
+import Hero from '../components/Hero.astro';
 
 const newsProject = [
 	"/react.png", 
@@ -32,41 +32,41 @@ const vueJobsProject = [
 
 <Layout title="Juan Fernando Cano FullStack Developer">
 	<main>
-		<Presentation body='I am a computer science student and FullStack developer passionate and always improving. I love learning new things every day and studying to expand my knowledge in development.'/>
+		<Hero />
 		<h1>Projects</h1>
-		<div class="projects-container">
+		<div class="projects-container" id="projects">
 			<Card 
 				image="/newsProject.png"
 				title="Bootcamp News"
-				tecnologies={newsProject}
+				technologies={newsProject}
 				codeLink="https://github.com/Gurottesque/News-App"
 				deployLink="https://bootcamp-news.netlify.app/"
 			/>
 			<Card 
 				image="/memoramaProject.png"
 				title="Memorama Game"
-				tecnologies={memoramaProject}
+				technologies={memoramaProject}
 				codeLink="https://github.com/JuanF-Cano/memorama-game"
 				deployLink=""
 			/>
 				<Card 
 				image="/tmdbProject.png"
 				title="Cinema App"
-				tecnologies={tmdbProject}
+				technologies={tmdbProject}
 				codeLink="https://github.com/JuanF-Cano/cinema-app"
 				deployLink="https://frabjous-pastelito-9e6b9f.netlify.app/"
 			/>
 			<!-- <Card 
 				image=""
 				title="Nexo Social Media"
-				tecnologies={socialMediaProject}
+				technologies={socialMediaProject}
 				codeLink="https://github.com/FullStack-Elite-Bootcamp-IV/social-media-API"
 				deployLink=""
 			/> -->
 			<Card 
 				image="/vueProject.png"
 				title="Vue Jobs Project"
-				tecnologies={vueJobsProject}
+				technologies={vueJobsProject}
 				codeLink="https://github.com/JuanF-Cano/vue-project"
 				deployLink="https://vue-jobs-project-juanfc.netlify.app/"
 			/>
@@ -80,15 +80,17 @@ const vueJobsProject = [
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		padding: 2rem 4rem;
-		max-width: calc(100% - 2rem);
 		color: #fff;
 		font-size: 23px;
 		line-height: 1.7;
 	}
+	main > h1 {
+		margin-bottom: 3rem;
+	}
 	.projects-container {
 		display: flex;
 		justify-content: center;
-		width: 102%;
+		width: 100%;
+		height: calc(100vh - 15rem);
 	}
 </style>
